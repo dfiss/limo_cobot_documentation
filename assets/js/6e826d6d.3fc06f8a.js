@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklimo_cobot_documentation=self.webpackChunklimo_cobot_documentation||[]).push([[5198],{9759:o=>{o.exports=JSON.parse('{"metadata":{"permalink":"/limo_cobot_documentation/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

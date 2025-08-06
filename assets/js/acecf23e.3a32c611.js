@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklimo_cobot_documentation=self.webpackChunklimo_cobot_documentation||[]).push([[1903],{1912:o=>{o.exports=JSON.parse('{"blogBasePath":"/limo_cobot_documentation/blog","blogTitle":"Blog","authorsListPath":"/limo_cobot_documentation/blog/authors"}')}}]);

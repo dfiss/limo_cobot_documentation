@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" class="robot-svg">
+  <!-- Robot Body -->
+  <g id="robot-body">
+    <rect x="300" y="200" width="200" height="250" rx="20" fill="#2563eb" stroke="#1d4ed8" stroke-width="3"/>
+    <rect x="320" y="220" width="160" height="50" rx="10" fill="#3b82f6"/>
+  </g>
+  
+  <!-- Robot Head -->
+  <g id="robot-head">
+    <rect x="320" y="120" width="160" height="120" rx="15" fill="#1e40af" stroke="#1d4ed8" stroke-width="3"/>
+    <!-- Eyes -->
+    <circle id="left-eye" cx="360" cy="160" r="15" fill="#ef4444" opacity="0.3"/>
+    <circle id="right-eye" cx="440" cy="160" r="15" fill="#ef4444" opacity="0.3"/>
+    <!-- Mouth -->
+    <rect x="370" y="190" width="60" height="20" rx="10" fill="#374151"/>
+  </g>
+  
+  <!-- Left Arm -->
+  <g id="left-arm" transform-origin="300 250">
+    <rect x="200" y="240" width="100" height="20" rx="10" fill="#2563eb"/>
+    <rect x="170" y="230" width="40" height="40" rx="8" fill="#1e40af"/>
+  </g>
+  
+  <!-- Right Arm -->
+  <g id="right-arm" transform-origin="500 250">
+    <rect x="500" y="240" width="100" height="20" rx="10" fill="#2563eb"/>
+    <rect x="590" y="230" width="40" height="40" rx="8" fill="#1e40af"/>
+  </g>
+  
+  <!-- Legs -->
+  <g id="legs">
+    <rect x="330" y="450" width="30" height="80" rx="8" fill="#2563eb"/>
+    <rect x="440" y="450" width="30" height="80" rx="8" fill="#2563eb"/>
+    <rect x="320" y="520" width="50" height="20" rx="10" fill="#1e40af"/>
+    <rect x="430" y="520" width="50" height="20" rx="10" fill="#1e40af"/>
+  </g>
+  
+  <!-- Chest Panel -->
+  <g id="chest-panel">
+    <rect x="340" y="280" width="120" height="80" rx="8" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+    <circle id="power-button" cx="400" cy="300" r="8" fill="#10b981" opacity="0.5"/>
+    <rect x="350" y="320" width="100" height="8" rx="4" fill="#374151"/>
+    <rect x="350" y="335" width="80" height="8" rx="4" fill="#374151"/>
+    <rect x="350" y="350" width="60" height="8" rx="4" fill="#374151"/>
+  </g>
+  
+  <!-- Antenna -->
+  <g id="antenna">
+    <line x1="400" y1="120" x2="400" y2="80" stroke="#fbbf24" stroke-width="3"/>
+    <circle id="antenna-light" cx="400" cy="75" r="8" fill="#fbbf24" opacity="0.3"/>
+  </g>
+</svg>
