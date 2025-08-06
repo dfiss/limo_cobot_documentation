@@ -72,8 +72,22 @@
   background-color: transparent !important;
 }
 
+/* Light mode button styling */
+[data-theme='light'] .heroContent .button--outline {
+  color: white !important;
+  border-color: white !important;
+  background-color: transparent !important;
+}
+
 .heroContent .button--outline:hover,
 [data-theme='dark'] .heroContent .button--outline:hover {
+  background-color: white !important;
+  color: #0f1419 !important;
+  border-color: white !important;
+}
+
+/* Light mode button hover */
+[data-theme='light'] .heroContent .button--outline:hover {
   background-color: white !important;
   color: #0f1419 !important;
   border-color: white !important;
