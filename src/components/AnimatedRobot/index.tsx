@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
 interface AnimatedRobotProps {
@@ -9,6 +10,7 @@ interface AnimatedRobotProps {
 export default function AnimatedRobot({ className = '', animationStage = 0 }: AnimatedRobotProps) {
   const [currentStage, setCurrentStage] = useState(0);
   const robotRef = useRef<HTMLDivElement>(null);
+  const logoUrl = useBaseUrl('/img/limo_cobot.svg');
 
   useEffect(() => {
     setCurrentStage(animationStage);
@@ -19,7 +21,7 @@ export default function AnimatedRobot({ className = '', animationStage = 0 }: An
       {/* Main Robot Image */}
       <div className={styles.robotImageWrapper}>
         <img
-          src="/img/limo_cobot.svg"
+          src={logoUrl}
           alt="LIMO Cobot Robot"
           className={`${styles.robotImage} ${styles[`stage${currentStage}`]}`}
         />
