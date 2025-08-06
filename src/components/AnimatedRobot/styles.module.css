@@ -1,0 +1,387 @@
+/* Robot Container */
+.robotContainer {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+/* Robot Image */
+.robotImageWrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.robotImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: all 0.8s ease;
+  filter: brightness(0.7) saturate(0.8);
+}
+
+/* Stage Animations */
+.robotImage.stage0 {
+  filter: brightness(0.5) saturate(0.5) grayscale(0.3);
+  transform: scale(0.95);
+}
+
+.robotImage.stage1 {
+  filter: brightness(0.8) saturate(1);
+  transform: scale(1);
+}
+
+.robotImage.stage2 {
+  filter: brightness(0.9) saturate(1.1);
+  transform: scale(1.02);
+}
+
+.robotImage.stage3 {
+  filter: brightness(1) saturate(1.2);
+  transform: scale(1.05);
+}
+
+.robotImage.stage4 {
+  filter: brightness(1.1) saturate(1.3) drop-shadow(0 0 20px rgba(59, 130, 246, 0.5));
+  transform: scale(1.08);
+}
+
+/* Animation Overlays */
+.animationOverlays {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Eye Glow Effects */
+.eyeGlow {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ef4444, transparent 70%);
+  animation: eyePulse 2s ease-in-out infinite;
+  box-shadow: 0 0 15px #ef4444;
+}
+
+.leftEye {
+  top: 28%;
+  left: 38%;
+}
+
+.rightEye {
+  top: 28%;
+  right: 38%;
+}
+
+@keyframes eyePulse {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Power Indicator */
+.powerIndicator {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 15px;
+}
+
+.powerLight {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #10b981, #059669);
+  animation: powerPulse 1.5s ease-in-out infinite;
+  box-shadow: 0 0 20px #10b981;
+}
+
+@keyframes powerPulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* Status Panel */
+.statusPanel {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 80px;
+}
+
+.statusBar {
+  height: 4px;
+  background: #374151;
+  border-radius: 2px;
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.statusBar.bar1 {
+  width: 100%;
+  background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+  animation: fillBar 2s ease-in-out;
+}
+
+.statusBar.bar2.active {
+  width: 80%;
+  background: linear-gradient(90deg, #10b981, #059669);
+  animation: fillBar 2s ease-in-out 0.5s both;
+}
+
+.statusBar.bar3.active {
+  width: 60%;
+  background: linear-gradient(90deg, #f59e0b, #d97706);
+  animation: fillBar 2s ease-in-out 1s both;
+}
+
+@keyframes fillBar {
+  0% { width: 0; opacity: 0; }
+  100% { width: inherit; opacity: 1; }
+}
+
+/* Antenna Beacon */
+.antennaBeacon {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+}
+
+.beacon {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fbbf24, #f59e0b);
+  margin: 4px auto;
+  animation: beaconFlash 1s ease-in-out infinite;
+  box-shadow: 0 0 15px #fbbf24;
+}
+
+.beaconPulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border: 2px solid #fbbf24;
+  border-radius: 50%;
+  animation: beaconPulse 2s ease-out infinite;
+}
+
+@keyframes beaconFlash {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+@keyframes beaconPulse {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(3); opacity: 0; }
+}
+
+/* Particle Effects */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation: particleFloat 4s ease-in-out infinite;
+}
+
+.particle1 {
+  background: #fbbf24;
+  top: 20%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.particle2 {
+  background: #10b981;
+  top: 30%;
+  right: 20%;
+  animation-delay: 0.8s;
+}
+
+.particle3 {
+  background: #ef4444;
+  bottom: 35%;
+  left: 25%;
+  animation-delay: 1.6s;
+}
+
+.particle4 {
+  background: #3b82f6;
+  bottom: 25%;
+  right: 15%;
+  animation-delay: 2.4s;
+}
+
+.particle5 {
+  background: #8b5cf6;
+  top: 50%;
+  left: 10%;
+  animation-delay: 3.2s;
+}
+
+@keyframes particleFloat {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.5; }
+  25% { transform: translateY(-10px) scale(1.2); opacity: 1; }
+  50% { transform: translateY(-5px) scale(0.8); opacity: 0.8; }
+  75% { transform: translateY(-15px) scale(1.1); opacity: 0.9; }
+}
+
+/* Holographic UI */
+.holographicUI {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hologram {
+  position: absolute;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 8px;
+  padding: 8px;
+  backdrop-filter: blur(5px);
+  animation: holoFlicker 3s ease-in-out infinite;
+}
+
+.leftHolo {
+  top: 40%;
+  left: 5%;
+  transform: rotate(-5deg);
+}
+
+.rightHolo {
+  top: 45%;
+  right: 5%;
+  transform: rotate(5deg);
+}
+
+.holoText {
+  font-size: 10px;
+  color: #3b82f6;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.holoIndicator {
+  width: 20px;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, transparent);
+  border-radius: 2px;
+  margin: 0 auto;
+  animation: holoScan 2s ease-in-out infinite;
+}
+
+@keyframes holoFlicker {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+@keyframes holoScan {
+  0%, 100% { width: 20px; }
+  50% { width: 30px; }
+}
+
+/* Energy Field */
+.energyField {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 350px;
+  pointer-events: none;
+}
+
+.energyRing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  border-radius: 50%;
+  animation: energyRotate 10s linear infinite;
+}
+
+.energyRing.ring2 {
+  width: 120%;
+  height: 120%;
+  border-color: rgba(16, 185, 129, 0.2);
+  animation-duration: 15s;
+  animation-direction: reverse;
+}
+
+@keyframes energyRotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .robotContainer {
+    width: 300px;
+    height: 300px;
+    margin: 1rem auto;
+  }
+  
+  .robotImageWrapper {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .energyField {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .statusPanel {
+    width: 60px;
+  }
+  
+  .hologram {
+    padding: 6px;
+  }
+  
+  .holoText {
+    font-size: 8px;
+  }
+}

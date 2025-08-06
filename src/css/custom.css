@@ -1,0 +1,251 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #3f7cac;
+  --ifm-color-primary-dark: #366a97;
+  --ifm-color-primary-darker: #33658f;
+  --ifm-color-primary-darkest: #2a5376;
+  --ifm-color-primary-light: #488ec1;
+  --ifm-color-primary-lighter: #4b93c9;
+  --ifm-color-primary-lightest: #5ba7d4;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  
+  /* Custom professional styling */
+  --ifm-navbar-height: 60px;
+  --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --ifm-font-size-base: 16px;
+  --ifm-line-height-base: 1.6;
+  --ifm-heading-font-weight: 600;
+  --ifm-font-weight-semibold: 600;
+  --ifm-color-gray-100: #f8f9fa;
+  --ifm-color-gray-200: #e9ecef;
+  --ifm-color-gray-300: #dee2e6;
+  --ifm-color-gray-400: #ced4da;
+  --ifm-color-gray-500: #adb5bd;
+  --ifm-color-gray-600: #6c757d;
+  --ifm-color-gray-700: #495057;
+  --ifm-color-gray-800: #343a40;
+  --ifm-color-gray-900: #212529;
+  --ifm-border-radius: 8px;
+  --ifm-button-border-radius: 6px;
+  --ifm-card-border-radius: 12px;
+  
+  /* Futuristic additions */
+  --ifm-gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --ifm-gradient-secondary: linear-gradient(45deg, #667eea, #764ba2);
+  --ifm-backdrop-blur: blur(10px);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ifm-color-gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ifm-gradient-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ifm-color-primary-dark);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #5ba7d4;
+  --ifm-color-primary-dark: #4a9ccf;
+  --ifm-color-primary-darker: #4497cb;
+  --ifm-color-primary-darkest: #3680a8;
+  --ifm-color-primary-light: #6cb2d9;
+  --ifm-color-primary-lighter: #72b7dd;
+  --ifm-color-primary-lightest: #89c6e5;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-background-color: #1a1b1d;
+  --ifm-background-surface-color: #242526;
+}
+
+/* Professional navbar styling */
+.navbar {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--ifm-color-gray-200);
+  backdrop-filter: var(--ifm-backdrop-blur);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.navbar__brand {
+  transition: all 0.3s ease;
+}
+
+.navbar__brand:hover {
+  transform: scale(1.05);
+}
+
+.navbar__item {
+  transition: all 0.3s ease;
+}
+
+.navbar__link:hover {
+  background: var(--ifm-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme='dark'] .navbar {
+  border-bottom: 1px solid var(--ifm-color-gray-700);
+}
+
+/* Enhanced sidebar styling */
+.theme-doc-sidebar-container {
+  border-right: 1px solid var(--ifm-color-gray-200);
+}
+
+[data-theme='dark'] .theme-doc-sidebar-container {
+  border-right: 1px solid var(--ifm-color-gray-700);
+}
+
+/* Professional button styling */
+.button {
+  font-weight: var(--ifm-font-weight-semibold);
+  border-radius: var(--ifm-button-border-radius);
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced card styling */
+.card {
+  border-radius: var(--ifm-card-border-radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--ifm-color-gray-200);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+[data-theme='dark'] .card {
+  border: 1px solid var(--ifm-color-gray-700);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Professional code block styling */
+.prism-code {
+  border-radius: var(--ifm-border-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Enhanced table styling */
+.table-wrapper {
+  border-radius: var(--ifm-border-radius);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Professional admonition styling */
+.admonition {
+  border-radius: var(--ifm-border-radius);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Hero section improvements */
+.hero {
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
+  color: white;
+}
+
+.hero__title {
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.hero__subtitle {
+  font-size: 1.25rem;
+  opacity: 0.9;
+}
+
+/* Professional search bar */
+.navbar__search {
+  margin-right: 1rem;
+}
+
+/* Improved documentation layout */
+.markdown > h1 {
+  border-bottom: 2px solid var(--ifm-color-primary);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.markdown > h2 {
+  border-bottom: 1px solid var(--ifm-color-gray-300);
+  padding-bottom: 0.3rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+[data-theme='dark'] .markdown > h2 {
+  border-bottom: 1px solid var(--ifm-color-gray-600);
+}
+
+/* Professional pagination */
+.pagination-nav {
+  border-top: 1px solid var(--ifm-color-gray-200);
+  padding-top: 2rem;
+  margin-top: 3rem;
+}
+
+[data-theme='dark'] .pagination-nav {
+  border-top: 1px solid var(--ifm-color-gray-700);
+}
+
+/* Enhanced breadcrumbs */
+.breadcrumbs {
+  background: var(--ifm-color-gray-100);
+  padding: 0.75rem 1rem;
+  border-radius: var(--ifm-border-radius);
+  margin-bottom: 1rem;
+}
+
+[data-theme='dark'] .breadcrumbs {
+  background: var(--ifm-color-gray-800);
+}
+
+/* Professional footer */
+.footer {
+  border-top: 1px solid var(--ifm-color-gray-200);
+}
+
+[data-theme='dark'] .footer {
+  border-top: 1px solid var(--ifm-color-gray-700);
+}
+
+/* Mobile responsiveness improvements */
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: 2rem;
+  }
+  
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+}
