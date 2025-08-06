@@ -1,0 +1,56 @@
+/* Global navbar overrides for dark mode - SPECIFIC TARGETING ONLY */
+
+/* Override Docusaurus CSS variables for dark mode navbar only */
+html[data-theme='dark'] .navbar {
+  --ifm-navbar-link-color: black !important;
+  --ifm-navbar-link-hover-color: black !important;
+}
+
+/* Target specific navbar elements - NOT universal selectors */
+html[data-theme='dark'] .navbar .navbar__inner .navbar__items .navbar__item .navbar__link:not(.heroBanner *) {
+  color: black !important;
+}
+
+html[data-theme='dark'] .navbar .navbar__inner .navbar__items .navbar__brand .navbar__title {
+  color: black !important;
+}
+
+html[data-theme='dark'] .navbar .navbar__inner .navbar__items .dropdown .navbar__link {
+  color: black !important;
+}
+
+html[data-theme='dark'] .navbar .navbar__inner .navbar__items .dropdown .dropdown__menu .dropdown__link {
+  color: black !important;
+}
+
+/* Target GitHub link specifically */
+html[data-theme='dark'] .navbar__item.navbar__link[href*="github"] {
+  color: black !important;
+}
+
+/* PRESERVE search button normal styling */
+html[data-theme='dark'] .navbarSearchContainer_Bca1,
+html[data-theme='dark'] .navbarSearchContainer_Bca1 *,
+html[data-theme='dark'] .DocSearch,
+html[data-theme='dark'] .DocSearch * {
+  color: inherit !important;
+}
+
+/* Remove hover effects for navbar links only */
+html[data-theme='dark'] .navbar .navbar__link:hover {
+  color: black !important;
+  background-color: transparent !important;
+}
+
+html[data-theme='dark'] .navbar .dropdown__link:hover {
+  color: black !important;
+  background-color: transparent !important;
+}
+
+/* PRESERVE hero button styling - ensure buttons stay white */
+html[data-theme='dark'] .heroBanner .button--outline,
+html[data-theme='dark'] .heroBanner a.button,
+html[data-theme='dark'] .heroBanner a {
+  color: white !important;
+  border-color: white !important;
+}

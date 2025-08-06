@@ -1,0 +1,96 @@
+/* Global navbar overrides for dark mode - maximum specificity */
+
+/* Override Docusaurus CSS variables for dark mode - MOST IMPORTANT */
+html[data-theme='dark'] {
+  --ifm-navbar-link-color: black !important;
+  --ifm-navbar-link-hover-color: black !important;
+  --ifm-color-content: black !important;
+  --ifm-navbar-item-padding-horizontal: 1rem;
+  --ifm-navbar-item-padding-vertical: 0.25rem;
+}
+
+/* Target the main navbar container in dark mode */
+html[data-theme='dark'] .navbar {
+  --ifm-navbar-link-color: black !important;
+  --ifm-navbar-link-hover-color: black !important;
+}
+
+/* Direct targeting with maximum specificity - target every possible navbar element */
+html[data-theme='dark'] .navbar .navbar__inner .navbar__items .navbar__item .navbar__link,
+html[data-theme='dark'] .navbar__link,
+html[data-theme='dark'] .navbar__item,
+html[data-theme='dark'] .navbar a {
+  color: black !important;
+}
+
+html[data-theme='dark'] .navbar .navbar__inner .navbar__items .navbar__brand .navbar__title,
+html[data-theme='dark'] .navbar__title,
+html[data-theme='dark'] .navbar__brand {
+  color: black !important;
+}
+
+html[data-theme='dark'] .navbar .navbar__inner .navbar__items .dropdown .navbar__link,
+html[data-theme='dark'] .dropdown .navbar__link {
+  color: black !important;
+}
+
+html[data-theme='dark'] .navbar .navbar__inner .navbar__items .dropdown .dropdown__menu .dropdown__link,
+html[data-theme='dark'] .dropdown__menu .dropdown__link,
+html[data-theme='dark'] .dropdown__link {
+  color: black !important;
+}
+
+/* Target GitHub link specifically */
+html[data-theme='dark'] .navbar__item.navbar__link[href*="github"],
+html[data-theme='dark'] a[href*="github"] {
+  color: black !important;
+}
+
+/* Target search button */
+html[data-theme='dark'] .DocSearch.DocSearch-Button,
+html[data-theme='dark'] .DocSearch-Button {
+  color: black !important;
+}
+
+html[data-theme='dark'] .DocSearch-Button-Placeholder {
+  color: black !important;
+}
+
+/* Universal navbar text override for dark mode - NUCLEAR OPTION */
+html[data-theme='dark'] .navbar *,
+html[data-theme='dark'] nav *,
+html[data-theme='dark'] .theme-layout-navbar * {
+  color: black !important;
+}
+
+/* Remove hover effects by setting hover to same color */
+html[data-theme='dark'] .navbar .navbar__link:hover,
+html[data-theme='dark'] .navbar__link:hover {
+  color: black !important;
+  background-color: transparent !important;
+}
+
+html[data-theme='dark'] .navbar .dropdown__link:hover,
+html[data-theme='dark'] .dropdown__link:hover {
+  color: black !important;
+  background-color: transparent !important;
+}
+
+/* Ensure SVG icons are also black */
+html[data-theme='dark'] .navbar svg,
+html[data-theme='dark'] nav svg {
+  color: black !important;
+  fill: currentColor;
+}
+
+/* Target theme switcher button specifically */
+html[data-theme='dark'] .toggleButton_gllP,
+html[data-theme='dark'] .colorModeToggle_DEke button {
+  color: black !important;
+}
+
+/* Target all text nodes in navbar */
+html[data-theme='dark'] .navbar__inner,
+html[data-theme='dark'] .navbar__items {
+  color: black !important;
+}
