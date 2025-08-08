@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklimo_cobot_documentation=self.webpackChunklimo_cobot_documentation||[]).push([[4504],{34504:(e,o,c)=>{c.d(o,{createTreemapServices:()=>t.d});var t=c(43758);c(58198)}}]);

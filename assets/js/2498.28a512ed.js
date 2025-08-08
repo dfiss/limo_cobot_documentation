@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklimo_cobot_documentation=self.webpackChunklimo_cobot_documentation||[]).push([[2498],{92498:(e,c,t)=>{t.d(c,{createArchitectureServices:()=>o.S});var o=t(73009);t(58198)}}]);

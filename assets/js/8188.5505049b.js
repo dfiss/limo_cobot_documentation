@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklimo_cobot_documentation=self.webpackChunklimo_cobot_documentation||[]).push([[8188],{38188:(e,o,c)=>{c.d(o,{createPieServices:()=>t.f});var t=c(19786);c(58198)}}]);
