@@ -44,7 +44,6 @@ const sidebars: SidebarsConfig = {
       items: [
         'getting-started/hardware-unboxing',
         'getting-started/installing-code',
-        'getting-started/one-command-install',
         'getting-started/first-run',
       ],
     },
@@ -178,30 +177,6 @@ const sidebars: SidebarsConfig = {
 
     // ========================================
     // 📚 LEGACY TUTORIALS (preserved)
-    // ========================================
-    {
-      type: 'category',
-      label: '📚 Tutorial - Basics',
-      collapsed: true,
-      items: [
-        'tutorial-basics/create-a-document',
-        'tutorial-basics/create-a-page',
-        'tutorial-basics/create-a-blog-post',
-        'tutorial-basics/markdown-features',
-        'tutorial-basics/deploy-your-site',
-        'tutorial-basics/congratulations',
-      ],
-    },
-    {
-      type: 'category',
-      label: '🔧 Tutorial - Extras',
-      collapsed: true,
-      items: [
-        'tutorial-extras/manage-docs-versions',
-        'tutorial-extras/translate-your-site',
-      ],
-    },
-
     // ========================================
     // 🎯 TEMPLATE SECTIONS (ready to activate)
     // ========================================

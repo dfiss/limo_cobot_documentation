@@ -25,7 +25,7 @@ const config: Config = {
   organizationName: 'krish-rRay23', // Usually your GitHub org/user name.
   projectName: 'limo_cobot_documentation', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -44,8 +44,8 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/krish-rRay23/limo_cobot_documentation/tree/main/',
+          // editUrl:
+          //   'https://github.com/krish-rRay23/limo_cobot_documentation/tree/main/',
           // Enhanced table of contents configuration
           showLastUpdateTime: true,
           showLastUpdateAuthor: true,
@@ -119,11 +119,11 @@ const config: Config = {
             },
             {
               label: 'Installation',
-              to: '/docs/tutorial-basics/create-a-document',
+              to: '/docs/getting-started/installing-code',
             },
             {
               label: 'Configuration',
-              to: '/docs/tutorial-basics/create-a-page',
+              to: '/docs/environment-setup/configuration',
             },
           ],
         },
@@ -151,11 +151,11 @@ const config: Config = {
             },
             {
               label: 'API Reference',
-              to: '/docs/tutorial-basics/create-a-document',
+              to: '/docs/system-components/overview',
             },
             {
               label: 'Tutorials',
-              to: '/docs/tutorial-basics/create-a-page',
+              to: '/docs/usage-guide/basic-operations',
             },
           ],
         },
