@@ -10,7 +10,8 @@ const statusMessages = [
   "⚡ Powering Up - Core Systems Online",
   "🔄 Initializing Navigation Systems",
   "🤖 Robotic Systems Active",
-  "🌟 All Systems Operational - Ready for Collaboration"
+  "🌟 All Systems Operational - Ready for Collaboration",
+  "🚀 Ultimate Mode - Maximum Performance Achieved"
 ];
 
 const StatusDisplay: React.FC<StatusDisplayProps> = ({ stage }) => {
@@ -31,20 +32,20 @@ const StatusDisplay: React.FC<StatusDisplayProps> = ({ stage }) => {
           <div className={styles.metricBar}>
             <div 
               className={styles.metricFill} 
-              style={{ width: `${Math.min(stage * 25, 100)}%` }}
+              style={{ width: `${stage >= 5 ? 100 : Math.min(stage * 25, 100)}%` }}
             ></div>
           </div>
-          <span className={styles.metricValue}>{Math.min(stage * 25, 100)}%</span>
+          <span className={styles.metricValue}>{stage >= 5 ? 100 : Math.min(stage * 25, 100)}%</span>
         </div>
         <div className={styles.metric}>
           <span className={styles.metricLabel}>Systems:</span>
           <div className={styles.metricBar}>
             <div 
               className={styles.metricFill} 
-              style={{ width: `${Math.min((stage - 1) * 33.33, 100)}%` }}
+              style={{ width: `${stage >= 5 ? 100 : Math.min((stage - 1) * 33.33, 100)}%` }}
             ></div>
           </div>
-          <span className={styles.metricValue}>{Math.max(Math.min((stage - 1) * 33.33, 100), 0).toFixed(0)}%</span>
+          <span className={styles.metricValue}>{stage >= 5 ? 100 : Math.max(Math.min((stage - 1) * 33.33, 100), 0).toFixed(0)}%</span>
         </div>
       </div>
     </div>

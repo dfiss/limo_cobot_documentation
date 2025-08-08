@@ -1,15 +1,20 @@
 ---
 sidebar_position: 6
+title: First Run
 ---
 
-# First Run
+import Admonition from '@theme/Admonition';
 
-<!-- TODO: Add first run instructions -->
+# 🟢 First Run
 
-This section will guide through:
-- Running sample/test programs
-- Expected output and screenshots
-- Verification procedures
-- Common first-run issues
+Everything installed? Now let’s make sure the robot is alive and talking to you!
 
-*Content to be added...*
+---
+
+## 🚀 Launch the System
+
+From your workspace root (`~/limo_ws/`):
+
+```bash
+source install/setup.bash
+ros2 launch full_system.launch.py

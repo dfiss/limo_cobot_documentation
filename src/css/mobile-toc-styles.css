@@ -1,0 +1,243 @@
+/* Mobile Phone-style Table of Contents Styling */
+
+/* Container for the TOC that creates the phone-like appearance */
+.tableOfContents_bqdL {
+  position: fixed !important;
+  top: calc(var(--ifm-navbar-height) + 2rem) !important;
+  right: 2rem !important;
+  height: 600px !important;
+  max-height: 600px !important;
+  min-height: 600px !important;
+  padding: 1.5rem 1rem 2rem 1rem !important;
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%) !important;
+  border: 3px solid #000000 !important;
+  border-radius: 1.8rem !important;
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.25),
+    0 10px 10px -5px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(10px) !important;
+  width: 280px !important;
+  min-width: 280px !important;
+  max-width: 280px !important;
+  overflow: hidden !important;
+  z-index: 1000 !important;
+}
+
+/* Dark mode styling for the phone-like container */
+[data-theme='dark'] .tableOfContents_bqdL {
+  background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%) !important;
+  border: 3px solid #000000 !important;
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.6),
+    0 10px 10px -5px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Scrollable content area with mobile-style scrollbar */
+.table-of-contents {
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 480px !important;
+  max-height: 480px !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+/* Custom scrollbar styling for mobile feel */
+.table-of-contents::-webkit-scrollbar {
+  width: 4px !important;
+}
+
+.table-of-contents::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.table-of-contents::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3b82f6, #1d4ed8) !important;
+  border-radius: 2px !important;
+}
+
+.table-of-contents::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #1d4ed8, #1e40af) !important;
+}
+
+/* Individual TOC items styling */
+.table-of-contents li {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  border-radius: 0.75rem !important;
+  transition: all 0.2s ease !important;
+}
+
+/* TOC links with modern mobile styling */
+.table-of-contents__link {
+  display: flex !important;
+  align-items: center !important;
+  padding: 0.75rem 1rem !important;
+  margin: 0.25rem 0 !important;
+  color: #475569 !important;
+  text-decoration: none !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+  border-radius: 0.75rem !important;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Add mobile-style icons for top-level items */
+.table-of-contents > li > .table-of-contents__link::before {
+  content: "📱" !important;
+  margin-right: 0.5rem !important;
+  font-size: 0.875rem !important;
+}
+
+/* Different icons for nested items */
+.table-of-contents li li .table-of-contents__link::before {
+  content: "•" !important;
+  margin-right: 0.5rem !important;
+  color: #3b82f6 !important;
+  font-weight: bold !important;
+}
+
+/* Hover effects with mobile-like feedback */
+.table-of-contents__link:hover {
+  background: linear-gradient(90deg, #eff6ff 0%, #dbeafe 100%) !important;
+  color: #1d4ed8 !important;
+  transform: translateX(4px) !important;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15) !important;
+}
+
+/* Active state styling */
+.table-of-contents__link--active {
+  background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  box-shadow: 
+    0 4px 12px rgba(59, 130, 246, 0.4),
+    0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+.table-of-contents__link--active::before {
+  color: white !important;
+}
+
+/* Nested list styling for hierarchical content */
+.table-of-contents ul {
+  padding-left: 1rem !important;
+  margin: 0.25rem 0 0.5rem 0 !important;
+  border-left: 2px solid #e2e8f0 !important;
+  position: relative !important;
+}
+
+[data-theme='dark'] .table-of-contents ul {
+  border-left: 2px solid #334155 !important;
+}
+
+/* Nested items with smaller padding */
+.table-of-contents ul .table-of-contents__link {
+  padding: 0.5rem 0.75rem !important;
+  font-size: 0.8125rem !important;
+  margin: 0.125rem 0 !important;
+}
+
+/* Dark mode for links */
+[data-theme='dark'] .table-of-contents__link {
+  color: #cbd5e1 !important;
+}
+
+[data-theme='dark'] .table-of-contents__link:hover {
+  background: linear-gradient(90deg, #1e293b 0%, #334155 100%) !important;
+  color: #60a5fa !important;
+}
+
+[data-theme='dark'] .table-of-contents__link--active {
+  background: linear-gradient(90deg, #1e40af 0%, #1d4ed8 100%) !important;
+  color: white !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 1024px) {
+  .tableOfContents_bqdL {
+    display: none !important;
+  }
+}
+
+/* Large screen adjustments */
+@media (min-width: 1440px) {
+  .tableOfContents_bqdL {
+    width: 320px !important;
+    min-width: 320px !important;
+    max-width: 320px !important;
+    height: 650px !important;
+    max-height: 650px !important;
+    min-height: 650px !important;
+    padding: 2rem 1.25rem 2.5rem 1.25rem !important;
+  }
+  
+  .table-of-contents {
+    height: 520px !important;
+    max-height: 520px !important;
+  }
+  
+  .table-of-contents__link {
+    font-size: 0.9375rem !important;
+    padding: 0.875rem 1.25rem !important;
+  }
+}
+
+/* Animation for smooth appearance */
+.tableOfContents_bqdL {
+  animation: phoneSlideIn 0.3s ease-out !important;
+}
+
+@keyframes phoneSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Add subtle pulsing animation for active items */
+.table-of-contents__link--active {
+  animation: activeGlow 2s ease-in-out infinite alternate !important;
+}
+
+@keyframes activeGlow {
+  from {
+    box-shadow: 
+      0 4px 12px rgba(59, 130, 246, 0.4),
+      0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  to {
+    box-shadow: 
+      0 6px 16px rgba(59, 130, 246, 0.6),
+      0 2px 4px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Left border highlight for active states */
+.table-of-contents__left-border {
+  border-left: none !important;
+}
+
+/* Ensure proper spacing in document layout */
+.theme-doc-toc-desktop {
+  padding-left: 0 !important;
+}
+
+
+/* Override any conflicting margin from theme */
+.thin-scrollbar {
+  scrollbar-width: thin !important;
+  scrollbar-color: #3b82f6 transparent !important;
+}

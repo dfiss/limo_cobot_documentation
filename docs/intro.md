@@ -1,98 +1,116 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
-# Introduction to LIMO Cobot
+# Product Structure: LIMO COBOT
 
-Welcome to the **LIMO Cobot Documentation** - your comprehensive guide to building advanced applications with our collaborative robotics platform.
+Welcome to the **Product Structure** documentation for the **LIMO COBOT platform** — an integrated modular robotic system combining mobile autonomy, precision manipulation, and AI-powered perception.
 
-## What is LIMO Cobot?
+## Modular Components Breakdown
 
-LIMO Cobot is a cutting-edge collaborative robotics platform designed for seamless integration into various industrial and research environments. Our platform combines advanced motion control, intelligent perception, and intuitive programming interfaces to deliver exceptional performance and safety.
+LIMO COBOT comprises the following key components:
 
-### Key Features
+![LIMO COBOT Overview](/img/product.png)
 
-- **🤖 Advanced Motion Control** - Precision robotics with safety-first design
-- **🔧 Easy Integration** - RESTful APIs and SDKs for multiple programming languages  
-- **📊 Real-time Monitoring** - Comprehensive telemetry and diagnostics
-- **🛡️ Safety First** - Built-in collision detection and emergency stop systems
-- **🔄 Flexible Configuration** - Customizable workflows and task automation
+---
 
-## Getting Started
+### 1. 🚗 Base Platform – **LIMO (Mobile Robot Chassis)**
 
-Choose your path to get started with LIMO Cobot:
+- **Manufacturer**: AgileX Robotics  
+- **Function**: Mobile base with onboard compute, power, and sensor integrations  
+- **Steering Modes**:
+  - Differential
+  - Ackermann
+  - Omni-directional
+  - Tracked  
+- **Wheel Type**: Rubber all-terrain with independent suspension  
+- **I/O Ports**: USB, HDMI, Ethernet, CAN, UART  
+- **Battery**: 4S Li-ion with BMS (~40 min runtime)  
+- **Model**: LIMO PRO V2.0  
+- **Application**: Supports SLAM, navigation, autonomous driving algorithms
 
-### Quick Start Guide
+---
 
-New to LIMO Cobot? Start here for a rapid introduction:
+### 2. 🦾 Robotic Arm – **Elephant Robotics myCobot 280 (6-DoF)**
 
-```bash
-# Install the LIMO Cobot SDK
-npm install @limo/cobot-sdk
+- **Reach**: 280 mm  
+- **Payload**: 250 g  
+- **Repeatability**: ±0.5 mm  
+- **Weight**: ~850 g  
+- **Material**: Aluminum alloy + ABS plastic  
+- **Degrees of Freedom**: 6  
+- **Connectivity**: USB / Serial  
+- **Mount**: Swappable end-effector (grippers, suction, tools)  
+- **Use Case**: Pick-and-place, human gestures, lab automation, object sorting
 
-# Or using Python
-pip install limo-cobot
-```
+---
 
-### For Developers
+### 3. 🧠 Compute Module – **NVIDIA Jetson Orin Nano**
 
-- **[Installation Guide](./tutorial-basics/create-a-document.md)** - Set up your development environment
-- **[API Reference](./tutorial-basics/create-a-page.md)** - Complete API documentation
-- **[Code Examples](./tutorial-basics/markdown-features.mdx)** - Ready-to-use code snippets
+- **CPU**: ARM Cortex-A78AE  
+- **GPU**: Ampere architecture with 1024 CUDA cores  
+- **AI Performance**: Up to 40 TOPS  
+- **Memory**: 8 GB LPDDR5  
+- **Interfaces**: GPIO, I²C, UART, SPI, M.2  
+- **OS**: Ubuntu 20.04 with NVIDIA JetPack SDK  
+- **Purpose**: AI inference (YOLO, pose estimation), ROS2 nodes, sensor fusion
 
-### For System Integrators
+---
 
-- **[Configuration Guide](./tutorial-basics/deploy-your-site.md)** - System setup and configuration
-- **[Safety Guidelines](./tutorial-basics/congratulations.md)** - Important safety considerations
-- **[Troubleshooting](./tutorial-extras/manage-docs-versions.md)** - Common issues and solutions
+### 4. 🔎 Depth Camera – **Orbbec DaBai**  
 
-## System Requirements
+- **Sensor Type**: Stereo depth + RGB  
+- **Depth Resolution**: 1280×720  
+- **RGB Resolution**: 1920×1080  
+- **Depth Range**: Up to 8 meters  
+- **Field of View**: ~90°  
+- **Interface**: USB 3.0  
+- **Applications**: Obstacle avoidance, 3D mapping, hand tracking, human interaction
 
-Before getting started, ensure your system meets these requirements:
+---
 
-- **Operating System**: Windows 10/11, Ubuntu 20.04+, or macOS 11+
-- **Memory**: Minimum 8GB RAM (16GB recommended)
-- **Network**: Ethernet connection for robot communication
-- **Development Environment**: Node.js 18+ or Python 3.8+
+### 5. 🧭 Inertial Measurement Unit – **IMU (e.g., MPU6050)**
 
-## Architecture Overview
+- **Sensors**:
+  - 3-Axis Gyroscope
+  - 3-Axis Accelerometer  
+- **Purpose**: Orientation, angular velocity, acceleration  
+- **Usage**: Pose estimation via sensor fusion (IMU + LiDAR + Odometry)
 
-LIMO Cobot follows a modular architecture designed for scalability and reliability:
+---
 
-```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Application   │    │   LIMO Cobot    │    │   Robot Arm     │
-│   Layer         │◄──►│   Platform      │◄──►│   Hardware      │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-```
+### 6. 🧠 LiDAR Sensor – **EAI T-mini Pro**
 
-## Next Steps
+- **Type**: 2D 360° LiDAR Scanner  
+- **Range**: 0.1 – 12 meters  
+- **FOV**: 360°  
+- **Scan Frequency**: Up to 15 Hz  
+- **Angular Resolution**: ≤ 0.25°  
+- **Interface**: USB / UART  
+- **Use Case**: SLAM, obstacle detection, autonomous navigation
 
-Ready to dive in? Here's what to do next:
+---
 
-1. **[Install the SDK](./tutorial-basics/create-a-document.md)** - Get the development tools
-2. **[Run Your First Program](./tutorial-basics/create-a-page.md)** - Hello World example
-3. **[Explore the API](./tutorial-basics/markdown-features.mdx)** - Learn the core concepts
+## 🔧 Physical Integration Layout
 
-:::tip Need Help?
+The components are compactly and logically mounted on the LIMO chassis:
 
-Join our [community forum](https://github.com/your-org/limo-cobot-documentation/discussions) or check out our [Discord server](https://discord.gg/your-discord) for support and discussions.
+- **Robotic Arm**: Top-front mounted — ensures optimal reachability  
+- **Depth Camera (Orbbec DaBai)**: Front-mounted — eye-level for human-like perception  
+- **LiDAR**: Top-mounted — unobstructed 360° scanning  
+- **IMU**: Internally centered — stable motion tracking  
+- **Jetson Orin Nano**: Internally mounted with thermal design considerations  
 
-:::
+---
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+## 🧱 Capability Stack Overview
 
-## Start your site
+| Layer               | Modules                         | Functional Role                                      |
+|--------------------|----------------------------------|------------------------------------------------------|
+| **Perception**      | Orbbec DaBai, LiDAR              | Vision, mapping, depth sensing, SLAM                 |
+| **Intelligence**    | NVIDIA Orin Nano                 | AI computation, decision-making, sensor processing   |
+| **Mobility**        | LIMO Chassis                     | Locomotion, terrain traversal, autonomous driving    |
+| **Manipulation**    | myCobot 280                      | Grasping, actuation, interaction                     |
+| **Sensing & Feedback** | IMU, LiDAR                  | Pose estimation, obstacle awareness, localization    |
 
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+---

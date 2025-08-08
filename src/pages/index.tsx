@@ -32,15 +32,15 @@ function HomepageHeader() {
               </Link>
               <Link
                 className="button button--outline button--secondary button--lg"
-                to="/docs/tutorial-basics/create-a-document"
+                to="/docs/intro"
                 style={{marginLeft: '1rem'}}>
                 View Documentation
               </Link>
             </div>
           </div>
           <div className={styles.heroRight}>
-            <AnimatedRobot animationStage={0} />
-            <StatusDisplay stage={0} />
+            <AnimatedRobot animationStage={5} />
+            <StatusDisplay stage={5} />
           </div>
         </div>
       </div>
@@ -91,150 +91,132 @@ function RobotStorySection() {
       <ScrollProgress onProgressChange={handleProgressChange} />
       
       <div className={styles.storyLayout}>
-        <div className={styles.robotColumn}>
-          <div 
-            className={styles.robotWrapper}
-            style={{
-              transform: `translateY(${robotPosition}vh)`
-            }}
-          >
-            <AnimatedRobot animationStage={robotStage} />
-            <StatusDisplay stage={robotStage} />
+      <div className={styles.robotColumn}>
+        <div 
+        className={styles.robotWrapper}
+        style={{
+          transform: `translateY(${robotPosition}vh)`
+        }}
+        >
+        <AnimatedRobot animationStage={robotStage} />
+        <StatusDisplay stage={robotStage} />
+        </div>
+      </div>
+      
+      <div className={styles.contentColumn}>
+        {/* Stage 1: System Initialization */}
+        <ScrollAnimation animation="slideInRight" triggerPoint={0.3}>
+        <div 
+          className={styles.storySection}
+          ref={el => { cardRefs.current[0] = el; }}
+        >
+          <Heading as="h2" className={styles.storyTitle}>
+          🟢 System Initialization
+          </Heading>
+          <p className={styles.storyText}>
+          Seamlessly set up and launch the complete ROS2 workspace for LIMO Cobot with a single command. Hardware, drivers, and environment configuration are automated for a plug-and-play experience.
+          </p>
+          <div className={styles.featureList}>
+          <div className={styles.feature}>🔗 One-Click Launch</div>
+          <div className={styles.feature}>🖥️ Automated Hardware Detection</div>
+          <div className={styles.feature}>⚙️ Clean Modular Workspace</div>
           </div>
         </div>
-        
-        <div className={styles.contentColumn}>
-          {/* Stage 1: Robot Awakens */}
-          <ScrollAnimation animation="slideInRight" triggerPoint={0.3}>
-            <div 
-              className={styles.storySection}
-              ref={el => { cardRefs.current[0] = el; }}
-            >
-              <Heading as="h2" className={styles.storyTitle}>
-                🔋 Robot Awakens
-              </Heading>
-              <p className={styles.storyText}>
-                LIMO Cobot comes to life with advanced AI systems. Watch as the eyes light up 
-                and the power systems initialize, ready for autonomous operation.
-              </p>
-              <div className={styles.featureList}>
-                <div className={styles.feature}>✨ AI-Powered Intelligence</div>
-                <div className={styles.feature}>🔋 Advanced Power Management</div>
-                <div className={styles.feature}>👀 Computer Vision Systems</div>
-              </div>
-            </div>
-          </ScrollAnimation>
+        </ScrollAnimation>
 
-          {/* Stage 2: Autonomous Movement */}
-          <ScrollAnimation animation="slideInRight" triggerPoint={0.3} delay={200}>
-            <div 
-              className={styles.storySection}
-              ref={el => { cardRefs.current[1] = el; }}
-            >
-              <Heading as="h2" className={styles.storyTitle}>
-                🚶 Autonomous Movement
-              </Heading>
-              <p className={styles.storyText}>
-                Advanced locomotion systems engage. LIMO Cobot begins its journey with 
-                precise navigation and obstacle avoidance capabilities.
-              </p>
-              <div className={styles.featureList}>
-                <div className={styles.feature}>🗺️ SLAM Navigation</div>
-                <div className={styles.feature}>🚧 Obstacle Avoidance</div>
-                <div className={styles.feature}>📍 Precision Positioning</div>
-              </div>
-            </div>
-          </ScrollAnimation>
-
-          {/* Stage 3: Robotic Manipulation */}
-          <ScrollAnimation animation="slideInRight" triggerPoint={0.3} delay={400}>
-            <div 
-              className={styles.storySection}
-              ref={el => { cardRefs.current[2] = el; }}
-            >
-              <Heading as="h2" className={styles.storyTitle}>
-                🤖 Robotic Manipulation
-              </Heading>
-              <p className={styles.storyText}>
-                Sophisticated arm control systems activate. Watch the robot demonstrate 
-                precise manipulation capabilities for complex tasks.
-              </p>
-              <div className={styles.featureList}>
-                <div className={styles.feature}>🦾 6-DOF Manipulation</div>
-                <div className={styles.feature}>🎯 Precise Control</div>
-                <div className={styles.feature}>🔄 Task Automation</div>
-              </div>
-            </div>
-          </ScrollAnimation>
-
-          {/* Stage 4: Full Integration */}
-          <ScrollAnimation animation="slideInRight" triggerPoint={0.3} delay={600}>
-            <div 
-              className={styles.storySection}
-              ref={el => { cardRefs.current[3] = el; }}
-            >
-              <Heading as="h2" className={styles.storyTitle}>
-                🌟 Full Integration
-              </Heading>
-              <p className={styles.storyText}>
-                All systems fully operational! LIMO Cobot is now ready for complex 
-                collaborative tasks with seamless human-robot interaction.
-              </p>
-              <div className={styles.featureList}>
-                <div className={styles.feature}>🤝 Human-Robot Collaboration</div>
-                <div className={styles.feature}>📡 Wireless Communication</div>
-                <div className={styles.feature}>🔮 Predictive Analytics</div>
-              </div>
-              <div className={styles.ctaSection}>
-                <Link
-                  className="button button--primary button--lg"
-                  to="/docs/intro">
-                  Start Building with LIMO Cobot
-                </Link>
-                <Link
-                  className="button button--outline button--secondary button--lg"
-                  to="/docs/tutorial-basics/create-a-document"
-                  style={{marginLeft: '1rem'}}>
-                  View Documentation
-                </Link>
-              </div>
-            </div>
-          </ScrollAnimation>
-
-          {/* Stage 5: Advanced Operations */}
-          <ScrollAnimation animation="slideInRight" triggerPoint={0.3} delay={800}>
-            <div 
-              className={styles.storySection}
-              ref={el => { cardRefs.current[4] = el; }}
-            >
-              <Heading as="h2" className={styles.storyTitle}>
-                🚀 Advanced Operations
-              </Heading>
-              <p className={styles.storyText}>
-                LIMO Cobot reaches peak performance with advanced AI capabilities, 
-                real-time decision making, and seamless integration with industrial systems.
-              </p>
-              <div className={styles.featureList}>
-                <div className={styles.feature}>🧠 Advanced AI Decision Making</div>
-                <div className={styles.feature}>⚡ Real-time Processing</div>
-                <div className={styles.feature}>🏭 Industrial Integration</div>
-              </div>
-              <div className={styles.ctaSection}>
-                <Link
-                  className="button button--primary button--lg"
-                  to="/docs/intro">
-                  Explore Advanced Features
-                </Link>
-                <Link
-                  className="button button--outline button--secondary button--lg"
-                  to="/docs/tutorial-basics/create-a-document"
-                  style={{marginLeft: '1rem'}}>
-                  Technical Documentation
-                </Link>
-              </div>
-            </div>
-          </ScrollAnimation>
+        {/* Stage 2: Autonomous Exploration */}
+        <ScrollAnimation animation="slideInRight" triggerPoint={0.3} delay={200}>
+        <div 
+          className={styles.storySection}
+          ref={el => { cardRefs.current[1] = el; }}
+        >
+          <Heading as="h2" className={styles.storyTitle}>
+          🚗 Autonomous Exploration
+          </Heading>
+          <p className={styles.storyText}>
+          LIMO robot explores unknown environments using real-time SLAM, custom waypoints, and robust mapping. It navigates safely, performing rotational scans to ensure complete area coverage.
+          </p>
+          <div className={styles.featureList}>
+          <div className={styles.feature}>🗺️ SLAM Mapping & Cartographer</div>
+          <div className={styles.feature}>🔄 Rotational Scanning</div>
+          <div className={styles.feature}>🤖 Dynamic Path Planning</div>
+          </div>
         </div>
+        </ScrollAnimation>
+
+        {/* Stage 3: Real-Time 3D Object Detection */}
+        <ScrollAnimation animation="slideInRight" triggerPoint={0.3} delay={400}>
+        <div 
+          className={styles.storySection}
+          ref={el => { cardRefs.current[2] = el; }}
+        >
+          <Heading as="h2" className={styles.storyTitle}>
+          🟦 Real-Time 3D Object Detection
+          </Heading>
+          <p className={styles.storyText}>
+          Integrated YOLOv8 object detection with depth cameras for precise 3D localization. Detected objects are transformed to map frame for actionable robotic responses.
+          </p>
+          <div className={styles.featureList}>
+          <div className={styles.feature}>🟡 YOLOv8 with Custom Dataset</div>
+          <div className={styles.feature}>🔢 Depth-Based Localization</div>
+          <div className={styles.feature}>📡 Map Frame Integration</div>
+          </div>
+        </div>
+        </ScrollAnimation>
+
+        {/* Stage 4: Intelligent Manipulation */}
+        <ScrollAnimation animation="slideInRight" triggerPoint={0.3} delay={600}>
+        <div 
+          className={styles.storySection}
+          ref={el => { cardRefs.current[3] = el; }}
+        >
+          <Heading as="h2" className={styles.storyTitle}>
+          ✋ Intelligent Manipulation
+          </Heading>
+          <p className={styles.storyText}>
+          MyCobot arm executes robust, wireless pick-and-place tasks with automatic pose detection and error handling. Full integration with voice feedback and timeout recovery ensures reliability.
+          </p>
+          <div className={styles.featureList}>
+          <div className={styles.feature}>📶 Wireless Arm Control</div>
+          <div className={styles.feature}>🎯 Precise Pick & Drop</div>
+          <div className={styles.feature}>🔊 Voice Feedback Integration</div>
+          </div>
+        </div>
+        </ScrollAnimation>
+
+        {/* Stage 5: Fully Autonomous Mission Logic */}
+        <ScrollAnimation animation="slideInRight" triggerPoint={0.3} delay={800}>
+        <div 
+          className={styles.storySection}
+          ref={el => { cardRefs.current[4] = el; }}
+        >
+          <Heading as="h2" className={styles.storyTitle}>
+          🚀 Fully Autonomous Mission Logic
+          </Heading>
+          <p className={styles.storyText}>
+          LIMO robot autonomously links all modules: explores, detects, navigates, picks, returns, and drops—no human intervention needed. Robust recovery and advanced launch sequencing make it production-ready.
+          </p>
+          <div className={styles.featureList}>
+          <div className={styles.feature}>🤖 State Machine Orchestration</div>
+          <div className={styles.feature}>💡 Recovery & Error Handling</div>
+          <div className={styles.feature}>🛠️ Production-Grade Automation</div>
+          </div>
+          <div className={styles.ctaSection}>
+          <Link
+            className="button button--primary button--lg"
+            to="/docs/intro">
+            Explore Full Workflow
+          </Link>
+          <Link
+            className="button button--outline button--secondary button--lg"
+            to="/docs/intro"
+            style={{marginLeft: '1rem'}}>
+            Technical Documentation
+          </Link>
+          </div>
+        </div>
+        </ScrollAnimation>
+      </div>
       </div>
     </div>
   );

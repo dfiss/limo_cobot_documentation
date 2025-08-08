@@ -46,6 +46,9 @@ const config: Config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/krish-rRay23/limo_cobot_documentation/tree/main/',
+          // Enhanced table of contents configuration
+          showLastUpdateTime: true,
+          showLastUpdateAuthor: true,
         },
         blog: {
           showReadingTime: true,
@@ -69,6 +72,12 @@ const config: Config = {
     ],
   ],
 
+  themes: ['@docusaurus/theme-mermaid'],
+  
+  markdown: {
+    mermaid: true,
+  },
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
@@ -76,13 +85,18 @@ const config: Config = {
       {name: 'keywords', content: 'limo, cobot, robotics, documentation, api'},
       {name: 'twitter:card', content: 'summary_large_image'},
     ],
+    docs: {
+      sidebar: {
+        hideable: true,
+      },
+    },
     colorMode: {
       defaultMode: 'light',
       disableSwitch: false,
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'LIMO Cobot',
+      title: 'DOCS',
       logo: {
         alt: 'LIMO Cobot Logo',
         src: 'img/ipm_logo.png', 

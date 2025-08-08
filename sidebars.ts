@@ -16,7 +16,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '🚀 Welcome & Orientation',
-      collapsed: false,
+      collapsed: true,
       items: [
         'welcome/what-is-this-project',
         'welcome/who-should-use',
@@ -27,7 +27,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '📖 Introduction',
-      collapsed: false,
+      collapsed: true,
       items: [
         'introduction/project-overview',
         'introduction/key-features',
@@ -40,11 +40,9 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '⚡ Getting Started',
-      collapsed: false,
+      collapsed: true,
       items: [
-        'getting-started/prerequisites',
         'getting-started/hardware-unboxing',
-        'getting-started/computer-setup',
         'getting-started/installing-code',
         'getting-started/one-command-install',
         'getting-started/first-run',
@@ -57,7 +55,7 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         'environment-setup/workspace-structure',
-        'environment-setup/ros2-workspace',
+        // 'environment-setup/ros2-workspace',
         'environment-setup/configuration',
         'environment-setup/backup-restore',
       ],

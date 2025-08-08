@@ -18,6 +18,21 @@ export default function AnimatedRobot({ className = '', animationStage = 0 }: An
 
   return (
     <div ref={robotRef} className={`${styles.robotContainer} ${className}`}>
+      {/* Futuristic Background Grid */}
+      <div className={styles.quantumGrid}>
+        <div className={styles.gridLine}></div>
+        <div className={styles.gridLine}></div>
+        <div className={styles.gridLine}></div>
+        <div className={styles.gridLine}></div>
+      </div>
+
+      {/* Plasma Energy Field */}
+      <div className={styles.plasmaField}>
+        <div className={styles.plasmaOrb}></div>
+        <div className={`${styles.plasmaOrb} ${styles.orb2}`}></div>
+        <div className={`${styles.plasmaOrb} ${styles.orb3}`}></div>
+      </div>
+
       {/* Main Robot Image */}
       <div className={styles.robotImageWrapper}>
         <img
@@ -25,6 +40,14 @@ export default function AnimatedRobot({ className = '', animationStage = 0 }: An
           alt="LIMO Cobot Robot"
           className={`${styles.robotImage} ${styles[`stage${currentStage}`]}`}
         />
+        
+        {/* Futuristic Scanner Lines */}
+        {currentStage >= 1 && (
+          <div className={styles.scannerLines}>
+            <div className={styles.scanLine}></div>
+            <div className={`${styles.scanLine} ${styles.scanLine2}`}></div>
+          </div>
+        )}
       </div>
 
       {/* Animation Overlays */}
@@ -53,6 +76,18 @@ export default function AnimatedRobot({ className = '', animationStage = 0 }: An
           </div>
         )}
 
+        {/* Neural Network Visualization */}
+        {currentStage >= 3 && (
+          <div className={styles.neuralNetwork}>
+            <div className={styles.neuralNode}></div>
+            <div className={`${styles.neuralNode} ${styles.node2}`}></div>
+            <div className={`${styles.neuralNode} ${styles.node3}`}></div>
+            <div className={`${styles.neuralNode} ${styles.node4}`}></div>
+            <div className={styles.neuralConnection}></div>
+            <div className={`${styles.neuralConnection} ${styles.connection2}`}></div>
+          </div>
+        )}
+
         {/* Antenna Beacon */}
         {currentStage >= 4 && (
           <div className={styles.antennaBeacon}>
@@ -61,7 +96,7 @@ export default function AnimatedRobot({ className = '', animationStage = 0 }: An
           </div>
         )}
 
-        {/* Particle Effects */}
+        {/* Enhanced Particle Effects */}
         {currentStage >= 4 && (
           <div className={styles.particles}>
             <div className={`${styles.particle} ${styles.particle1}`}></div>
@@ -69,6 +104,9 @@ export default function AnimatedRobot({ className = '', animationStage = 0 }: An
             <div className={`${styles.particle} ${styles.particle3}`}></div>
             <div className={`${styles.particle} ${styles.particle4}`}></div>
             <div className={`${styles.particle} ${styles.particle5}`}></div>
+            <div className={`${styles.particle} ${styles.particle6}`}></div>
+            <div className={`${styles.particle} ${styles.particle7}`}></div>
+            <div className={`${styles.particle} ${styles.particle8}`}></div>
           </div>
         )}
 
@@ -83,6 +121,10 @@ export default function AnimatedRobot({ className = '', animationStage = 0 }: An
               <div className={styles.holoText}>ARM</div>
               <div className={styles.holoIndicator}></div>
             </div>
+            <div className={`${styles.hologram} ${styles.topHolo}`}>
+              <div className={styles.holoText}>AI</div>
+              <div className={styles.holoIndicator}></div>
+            </div>
           </div>
         )}
 
@@ -91,6 +133,16 @@ export default function AnimatedRobot({ className = '', animationStage = 0 }: An
           <div className={styles.energyField}>
             <div className={styles.energyRing}></div>
             <div className={`${styles.energyRing} ${styles.ring2}`}></div>
+            <div className={`${styles.energyRing} ${styles.ring3}`}></div>
+          </div>
+        )}
+
+        {/* Quantum Effects */}
+        {currentStage >= 4 && (
+          <div className={styles.quantumEffects}>
+            <div className={styles.quantumParticle}></div>
+            <div className={`${styles.quantumParticle} ${styles.qp2}`}></div>
+            <div className={`${styles.quantumParticle} ${styles.qp3}`}></div>
           </div>
         )}
       </div>

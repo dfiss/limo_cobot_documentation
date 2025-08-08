@@ -7,6 +7,12 @@
 /* Import custom navbar overrides */
 @import './navbar-override-fixed.css';
 
+/* Import mobile phone-style TOC styling */
+@import './mobile-toc-styles.css';
+
+/* Import additional mobile TOC enhancements */
+@import './mobile-toc-enhancements.css';
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #3f7cac;
@@ -251,4 +257,38 @@ html {
   .hero__subtitle {
     font-size: 1rem;
   }
+}
+
+/* Clean Logo & Title Styling like Ionic */
+.navbar__brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.navbar__logo img {
+  border-radius: 6px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.navbar__title {
+  font-weight: 700 !important;
+  font-size: 1.25rem !important;
+  color: #1a1a1a !important;
+  letter-spacing: -0.02em !important;
+}
+
+[data-theme='dark'] .navbar__title {
+  color: #ffffff !important;
+}
+
+.navbar__title::after {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #3f7cac;
+  border-radius: 50%;
+  margin-left: 8px;
+  vertical-align: middle;
 }
