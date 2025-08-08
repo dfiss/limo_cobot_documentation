@@ -82,7 +82,7 @@ The fastest way to get your feature accepted is to submit a **proof-of-concept**
 
 <Link
   className="button button--primary button--lg"
-  to="/docs/developer-corner/contributing"
+  to="/docs/developer/contributing"
 >
 📖 See How to Contribute Your Feature
 </Link>
