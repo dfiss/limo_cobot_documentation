@@ -50,21 +50,7 @@ const config: Config = {
           showLastUpdateTime: true,
           showLastUpdateAuthor: true,
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/krish-rRay23/limo_cobot_documentation/tree/main/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false, // Disable blog functionality
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -114,20 +100,44 @@ const config: Config = {
           position: 'left',
           items: [
             {
-              label: 'Getting Started',
+              label: 'Quick Start',
               to: '/docs/intro',
             },
             {
-              label: 'Installation',
+              label: 'Hardware Setup',
+              to: '/docs/getting-started/hardware-unboxing',
+            },
+            {
+              label: 'Software Installation',
               to: '/docs/getting-started/installing-code',
             },
             {
-              label: 'Configuration',
+              label: 'Environment Setup',
               to: '/docs/environment-setup/configuration',
+            },
+            {
+              label: 'ROS2 Workspace',
+              to: '/docs/environment-setup/ros2-workspace',
+            },
+            {
+              label: 'Core Concepts',
+              to: '/docs/core-concepts/ros2-basics',
+            },
+            {
+              label: 'System Components',
+              to: '/docs/system-components/overview',
+            },
+            {
+              label: 'Usage Guide',
+              to: '/docs/usage-guide/basic-operations',
+            },
+            {
+              label: 'Troubleshooting',
+              to: '/docs/troubleshooting/common-errors',
             },
           ],
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/demo', label: 'Demo', position: 'left'},
         {
           type: 'search',
           position: 'right',
@@ -180,8 +190,8 @@ const config: Config = {
           title: 'More',
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
+              label: 'Live Demo',
+              to: '/demo',
             },
             {
               label: 'GitHub',

@@ -1,6 +1,6 @@
 ---
-sidebar_position: 5
 title: Live Demo & Performance Showcase
+description: Experience the full capabilities of LIMO Cobot in action with autonomous navigation, object detection, and manipulation.
 ---
 
 # 🎥 Live Demo & Performance Showcase
@@ -133,7 +133,7 @@ Our advanced YOLO-based detection system delivers exceptional accuracy across va
 Impressed by what you've seen? Let's get your LIMO Cobot system up and running!
 
 <div style={{ display: 'flex', gap: '1rem', margin: '2rem 0', flexWrap: 'wrap' }}>
-  <a href="../environment-setup/workspace-structure" style={{ 
+  <a href="/docs/environment-setup/workspace-structure" style={{ 
     padding: '12px 24px', 
     backgroundColor: '#0969da', 
     color: 'white', 
@@ -142,7 +142,7 @@ Impressed by what you've seen? Let's get your LIMO Cobot system up and running!
     fontWeight: 'bold'
   }}>🔧 Workspace Setup</a>
   
-  <a href="../system-components/overview" style={{ 
+  <a href="/docs/system-components/overview" style={{ 
     padding: '12px 24px', 
     backgroundColor: '#f6f8fa', 
     color: '#0969da', 
@@ -152,7 +152,7 @@ Impressed by what you've seen? Let's get your LIMO Cobot system up and running!
     fontWeight: 'bold'
   }}>💻 Software Architecture</a>
   
-  <a href="../core-concepts/ros2-basics" style={{ 
+  <a href="/docs/core-concepts/ros2-basics" style={{ 
     padding: '12px 24px', 
     backgroundColor: '#f6f8fa', 
     color: '#0969da', 
@@ -170,5 +170,5 @@ For the best experience, ensure your workspace has good lighting and clear pathw
 :::
 
 :::info Questions?
-Check out our [FAQ section](../07-troubleshooting/faq.md) or [join our community](../00-welcome/how-to-get-help.md) for support and discussions.
+Check out our [FAQ section](/docs/troubleshooting/faq) or [join our community](/docs/welcome/how-to-get-help) for support and discussions.
 :::
