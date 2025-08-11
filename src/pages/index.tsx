@@ -52,42 +52,77 @@ function RobotStorySection() {
   const [robotStage, setRobotStage] = useState(0);
   const [robotPosition, setRobotPosition] = useState(0);
   const cardRefs = useRef([]);
+  const containerRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const cardIndex = cardRefs.current.indexOf(entry.target);
-            if (cardIndex !== -1) {
-              // Position robot to align with each card's position - 3x movement
-              // Card 0: 30vh, Card 1: 90vh, Card 2: 150vh, Card 3: 210vh, Card 4: 270vh
-              const robotPositions = [30, 90, 150, 210, 270];
-              setRobotPosition(robotPositions[cardIndex]);
-              setRobotStage(Math.min(cardIndex, 4)); // Keep stage max at 4
-            }
-          }
-        });
-      },
-      {
-        threshold: 0.3, // Trigger when 30% of card is visible
-        rootMargin: '-20% 0px -20% 0px' // Only trigger when card is well within viewport
+    const handleScroll = () => {
+      if (!containerRef.current) return;
+
+      const containerRect = containerRef.current.getBoundingClientRect();
+      const containerTop = containerRect.top;
+      const viewportHeight = window.innerHeight;
+      
+      // Find which card is most visible
+      let mostVisibleCard = -1;
+      let maxVisibility = 0;
+
+      cardRefs.current.forEach((card, index) => {
+        if (!card) return;
+        
+        const cardRect = card.getBoundingClientRect();
+        const cardTop = cardRect.top;
+        const cardBottom = cardRect.bottom;
+        const cardHeight = cardRect.height;
+        
+        // Calculate how much of the card is visible
+        const visibleTop = Math.max(cardTop, 0);
+        const visibleBottom = Math.min(cardBottom, viewportHeight);
+        const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+        const visibilityRatio = visibleHeight / cardHeight;
+        
+        if (visibilityRatio > maxVisibility) {
+          maxVisibility = visibilityRatio;
+          mostVisibleCard = index;
+        }
+      });
+
+      if (mostVisibleCard >= 0) {
+        setRobotStage(mostVisibleCard);
+        
+        // Calculate robot position to align with the most visible card
+        const targetCard = cardRefs.current[mostVisibleCard];
+        if (targetCard) {
+          const cardRect = targetCard.getBoundingClientRect();
+          const cardCenter = cardRect.top + cardRect.height / 2;
+          
+          // Convert to position relative to container, then to vh units
+          const relativePosition = (cardCenter - containerTop) / viewportHeight * 100;
+          
+          // Adjust to center robot with card (subtract robot height offset)
+          setRobotPosition(Math.max(0, relativePosition - 20)); // 20vh offset to center robot
+        }
       }
-    );
+    };
 
-    cardRefs.current.forEach((card) => {
-      if (card) observer.observe(card);
-    });
+    // Listen to scroll events
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
+    
+    // Initial calculation
+    handleScroll();
 
-    return () => observer.disconnect();
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
   }, []);
 
   const handleProgressChange = (_progress: number) => {
-    // Keep for backward compatibility but main logic is now in intersection observer
+    // Keep for backward compatibility
   };
 
   return (
-    <div className={styles.storyContainer}>
+    <div ref={containerRef} className={styles.storyContainer}>
       <ScrollProgress onProgressChange={handleProgressChange} />
       
       <div className={styles.storyLayout}>
@@ -95,7 +130,7 @@ function RobotStorySection() {
         <div 
         className={styles.robotWrapper}
         style={{
-          transform: `translateY(${robotPosition}vh)`
+          transform: `translateX(-50%) translateY(${robotPosition}vh)`
         }}
         >
         <AnimatedRobot animationStage={robotStage} />

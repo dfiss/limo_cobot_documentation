@@ -4,10 +4,10 @@
 .tableOfContents_bqdL {
   position: fixed !important;
   top: calc(var(--ifm-navbar-height) + 2rem) !important;
-  right: 2rem !important;
-  height: 600px !important;
-  max-height: 600px !important;
-  min-height: 600px !important;
+  right: 0.5rem !important;
+  height: 500px !important;
+  max-height: 500px !important;
+  min-height: 500px !important;
   padding: 1.5rem 1rem 2rem 1rem !important;
   background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%) !important;
   border: 3px solid #000000 !important;
@@ -18,9 +18,9 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.6),
     inset 0 0 0 1px rgba(0, 0, 0, 0.1) !important;
   backdrop-filter: blur(10px) !important;
-  width: 280px !important;
-  min-width: 280px !important;
-  max-width: 280px !important;
+  width: 240px !important;
+  min-width: 240px !important;
+  max-width: 240px !important;
   overflow: hidden !important;
   z-index: 1000 !important;
 }
@@ -40,8 +40,8 @@
 .table-of-contents {
   padding: 0 !important;
   margin: 0 !important;
-  height: 480px !important;
-  max-height: 480px !important;
+  height: 380px !important;
+  max-height: 380px !important;
   overflow-y: auto !important;
   overflow-x: hidden !important;
 }
@@ -171,18 +171,18 @@
 /* Large screen adjustments */
 @media (min-width: 1440px) {
   .tableOfContents_bqdL {
-    width: 320px !important;
-    min-width: 320px !important;
-    max-width: 320px !important;
-    height: 650px !important;
-    max-height: 650px !important;
-    min-height: 650px !important;
+    width: 270px !important;
+    min-width: 270px !important;
+    max-width: 270px !important;
+    height: 550px !important;
+    max-height: 550px !important;
+    min-height: 550px !important;
     padding: 2rem 1.25rem 2.5rem 1.25rem !important;
   }
   
   .table-of-contents {
-    height: 520px !important;
-    max-height: 520px !important;
+    height: 420px !important;
+    max-height: 420px !important;
   }
   
   .table-of-contents__link {

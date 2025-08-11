@@ -175,7 +175,7 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
-  min-height: 200vh;
+  min-height: 300vh; /* Match robot and content column heights */
   align-items: start;
   position: relative;
 }
@@ -187,7 +187,7 @@
   align-items: center;
   align-self: start;
   transition: none;
-  height: 350vh; /* Increased height for 5th card at 270vh */
+  height: 300vh; /* Match content column height for better sync */
   position: relative;
 }
 
@@ -196,17 +196,22 @@
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   margin-top: 2rem;
-  transition: transform 0.3s ease;
+  transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother animation */
+  z-index: 10;
+  width: 100%;
 }
 
 .contentColumn {
   display: flex;
   flex-direction: column;
-  gap: 8rem;
+  gap: 6rem; /* Reduced gap for better alignment */
   padding: 4rem 0 8rem 0;
-  min-height: calc(150vh); /* Reduced height so robot movement aligns better with content */
+  min-height: 300vh; /* Match robot column height */
 }
 
 .storySection {
