@@ -137,7 +137,7 @@ const config: Config = {
             },
           ],
         },
-        {to: '/demo', label: 'Demo', position: 'left'},
+        {to: '/docs/introduction/demo', label: 'Demo', position: 'left'},
         {
           type: 'search',
           position: 'right',
@@ -191,7 +191,7 @@ const config: Config = {
           items: [
             {
               label: 'Live Demo',
-              to: '/demo',
+              to: '/docs/introduction/demo',
             },
             {
               label: 'GitHub',
