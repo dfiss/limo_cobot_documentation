@@ -12,10 +12,16 @@ Experience the full capabilities of LIMO Cobot in action! See how autonomous nav
 ## 🤖 Complete System Demo
 
 <div align="center">
-  <video controls width="720" style={{ borderRadius: '12px', boxShadow: '0 8px 32px rgba(0,0,0,0.15)', marginBottom: '1rem' }}>
-    <source src="/limo_cobot_documentation/videos/limo-demo.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
+  <iframe 
+    width="720" 
+    height="405" 
+    src="https://www.youtube.com/embed/hK2SS-d7NMo" 
+    title="LIMO Cobot Full System Demo" 
+    frameBorder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowFullScreen
+    style={{ borderRadius: '12px', boxShadow: '0 8px 32px rgba(0,0,0,0.15)', marginBottom: '1rem' }}
+  ></iframe>
   <p style={{ fontSize: '14px', color: '#666', fontStyle: 'italic', marginBottom: '2rem' }}>
     <strong>Full Pipeline Demo:</strong> Autonomous exploration → Object detection → Precise manipulation → Task completion
   </p>
