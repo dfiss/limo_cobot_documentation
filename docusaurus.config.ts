@@ -117,7 +117,7 @@ const config: Config = {
             },
             {
               label: 'ROS2 Workspace',
-              to: '/docs/environment-setup/ros2-workspace',
+              to: '/docs/environment-setup/workspace-structure',
             },
             {
               label: 'Core Concepts',
@@ -129,7 +129,7 @@ const config: Config = {
             },
             {
               label: 'Usage Guide',
-              to: '/docs/usage-guide/basic-operations',
+              to: '/docs/usage-guide/full-workflow',
             },
             {
               label: 'Troubleshooting',
@@ -165,7 +165,7 @@ const config: Config = {
             },
             {
               label: 'Tutorials',
-              to: '/docs/usage-guide/basic-operations',
+              to: '/docs/environment-setup/workspace-structure',
             },
           ],
         },
@@ -174,7 +174,7 @@ const config: Config = {
           items: [
             {
               label: 'Support Forum',
-              href: 'https://github.com/krish-rRay23/limo_cobot_documentation/discussions',
+              to: 'docs/welcome/how-to-get-help',
             },
             {
               label: 'Discord',

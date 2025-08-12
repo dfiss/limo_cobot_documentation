@@ -157,7 +157,7 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         'future-work/roadmap',
-        'future-work/feature-requests',
+        // 'future-work/feature-requests',
         'future-work/improvements',
       ],
     },
