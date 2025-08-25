@@ -143,7 +143,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/krish-rRay23/limo_cobot_documentation',
+          href: 'https://github.com/dfiss/limo_cobot_documentation',
           label: 'GitHub',
           position: 'right',
         },
@@ -182,7 +182,7 @@ const config: Config = {
             },
             {
               label: 'Issues',
-              href: 'https://github.com/krish-rRay23/limo_cobot_documentation/issues',
+              href: 'https://github.com/dfiss/limo_cobot_documentation/issues',
             },
           ],
         },
@@ -195,7 +195,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/krish-rRay23/limo_cobot_documentation',
+              href: 'https://github.com/dfiss/limo_cobot_documentation',
             },
           ],
         },
